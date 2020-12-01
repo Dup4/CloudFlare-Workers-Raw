@@ -31,6 +31,12 @@ async function handleRequest(request) {
     let ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(),
         ct = null;
     switch (ext) {
+        case 'png':
+            ct = 'image/png';
+            break;
+        case 'gif':
+            ct = 'image/gif';
+            break;
         case 'svg':
             ct = 'image/svg+xml';
             break;
