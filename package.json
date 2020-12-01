@@ -1,0 +1,29 @@
+{
+    "private": true,
+    "name": "raw",
+    "version": "1.0.0",
+    "description": "CloudFlare-Workers-Raw",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write '**/*.{js,css,json,md}'",
+        "publish": "wrangler publish",
+        "preview": "wrangler preview"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,jsx,less,md,json}": [
+            "prettier --write"
+        ],
+        "*.ts?(x)": [
+            "prettier --parser=typescript --write"
+        ]
+    },
+    "author": "Dup4",
+    "license": "MIT",
+    "devDependencies": {
+        "prettier": "^1.18.2"
+    }
+}

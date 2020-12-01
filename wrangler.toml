@@ -1,0 +1,6 @@
+name = "raw"
+type = "webpack"
+account_id = "e546901c90180be107551d3ace509d01"
+workers_dev = false
+route = "raw.dup4.com/*"
+zone_id = "fbadbb77e2f82b27893340e0ae7ceff6"
