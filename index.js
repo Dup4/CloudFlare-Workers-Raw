@@ -20,7 +20,7 @@ async function handleRequest(request) {
 			},
 		})
 	} else {
-		url = 'https://raw.githubusercontent.com/' + url;
+		// url = 'https://raw.githubusercontent.com/' + url;
 		response = await fetch(url);
 	}
 
@@ -38,6 +38,9 @@ async function handleRequest(request) {
 			break;
 		case 'css':
 			ct = 'text/css';
+			break;
+		case 'pdf':
+			ct = 'application/pdf';
 			break;
 	}
 

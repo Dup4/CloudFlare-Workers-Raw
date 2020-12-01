@@ -24,9 +24,7 @@
     "author": "Dup4",
     "license": "MIT",
     "devDependencies": {
-        "prettier": "^1.18.2"
-    },
-    "dependencies": {
+        "prettier": "^1.18.2",
         "lint-staged": "^10.5.2"
     }
 }
