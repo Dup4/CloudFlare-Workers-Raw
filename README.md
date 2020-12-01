@@ -2,6 +2,9 @@
 
 ## Usage
 
+-   PNG: <https://raw.dup4.com/?url=https://raw.githubusercontent.com/Dup4/CloudFlare-Workers-Raw/main/test/cloudflare.png>
+-   PDF: <https://raw.dup4.com/?url=https://raw.githubusercontent.com/Dup4/CloudFlare-Workers-Raw/main/test/Test_PDF.pdf>
+
 ## Install
 
 -   clone the project and enter the subdirectory (representing a worker)
