@@ -7,8 +7,9 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write '**/*.{js,css,json,md}'",
+        "config": "wrangler config",
         "publish": "wrangler publish",
-        "preview": "wrangler preview"
+        "dev": "wrangler preview --watch"
     },
     "husky": {
         "hooks": {

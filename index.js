@@ -7,15 +7,15 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-    const _url = request.split('?');
+    const _url = request.url.split('?');
     const host = _url[0];
     const params = _url[1] || '';
     const searchParams = new URLSearchParams(params);
     const url = searchParams.get('url');
     let response = null;
 
-    if (url) {
-        response = new Response(`${host}?url={url}`, {
+    if (url == null) {
+        return new Response(`${host}?url={url}`, {
             status: 200,
             headers: {
                 'Content-Type': 'text/html',
