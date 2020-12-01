@@ -25,5 +25,5 @@ jobs:
           npm install
           npm install -g @cloudflare/wrangler
           wrangler --version
-          echo ${{ secrets.WRANGLER_TOKEN }} | yarn config
-          yarn publish
+          echo ${{ secrets.WRANGLER_TOKEN }} | wrangler config
+          wrangler publish
