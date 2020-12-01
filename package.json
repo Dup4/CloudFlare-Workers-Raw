@@ -10,8 +10,10 @@
         "publish": "wrangler publish",
         "preview": "wrangler preview"
     },
-    "gitHooks": {
-        "pre-commit": "lint-staged"
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     },
     "lint-staged": {
         "*.{js,jsx,less,md,json}": [
@@ -24,7 +26,8 @@
     "author": "Dup4",
     "license": "MIT",
     "devDependencies": {
+        "lint-staged": "^10.5.2",
         "prettier": "^1.18.2",
-        "lint-staged": "^10.5.2"
+        "husky": "^4.3.0"
     }
 }
