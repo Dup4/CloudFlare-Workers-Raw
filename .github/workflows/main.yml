@@ -25,5 +25,5 @@ jobs:
           npm install
           npm install -g @cloudflare/wrangler
           wrangler --version
-          cat ${{ secrets.WRANGLER_TOKEN }} | wrangler config
+          echo ${{ secrets.WRANGLER_TOKEN }} | wrangler config
           wrangler publish
