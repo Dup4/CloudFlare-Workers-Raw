@@ -49,6 +49,9 @@ async function handleRequest(request) {
         case 'pdf':
             ct = 'application/pdf';
             break;
+        default:
+            ct = 'text/html; charset=utf-8';
+            break;
     }
 
     if (ct) {
