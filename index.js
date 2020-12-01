@@ -1,16 +1,18 @@
 addEventListener('fetch', event => {
-    event.respondWith(handleRequest(event.request))
-})
+    event.respondWith(handleRequest(event.request));
+});
 
 /**
  * Respond to the request
  * @param {Request} request
  */
 async function handleRequest(request) {
-    let searchParams = new URLSearchParams(window.location.search)
-    let url = searchParams.get('url')
-    let response = null
-    const host = [window.location.protocol, window.location.hostname].join('//')
+    const _url = request.split('?');
+    const host = _url[0];
+    const params = _url[1] || '';
+    const searchParams = new URLSearchParams(params);
+    const url = searchParams.get('url');
+    let response = null;
 
     if (url) {
         response = new Response(`${host}?url={url}`, {
@@ -18,37 +20,37 @@ async function handleRequest(request) {
             headers: {
                 'Content-Type': 'text/html',
             },
-        })
+        });
     } else {
-        response = await fetch(url)
+        response = await fetch(url);
     }
 
-    let myHeaders = new Headers(response.headers)
-    myHeaders.set('Access-Control-Allow-Origin', '*')
+    let myHeaders = new Headers(response.headers);
+    myHeaders.set('Access-Control-Allow-Origin', '*');
 
     let ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase(),
-        ct = null
+        ct = null;
     switch (ext) {
         case 'svg':
-            ct = 'image/svg+xml'
-            break
+            ct = 'image/svg+xml';
+            break;
         case 'js':
-            ct = 'application/javascript'
-            break
+            ct = 'application/javascript';
+            break;
         case 'css':
-            ct = 'text/css'
-            break
+            ct = 'text/css';
+            break;
         case 'pdf':
-            ct = 'application/pdf'
-            break
+            ct = 'application/pdf';
+            break;
     }
 
     if (ct) {
-        myHeaders.set('Content-Type', ct)
+        myHeaders.set('Content-Type', ct);
     }
 
     return new Response(response.body, {
         status: response.status,
         headers: myHeaders,
-    })
+    });
 }
